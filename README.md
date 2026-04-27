@@ -1,15 +1,20 @@
 # Kelime Tahmin Oyunu
 
-Bu proje React ile yapılmış tek sayfalık bir kelime tahmin oyunu.
+Bu projede React kullanarak basit bir kelime tahmin oyunu yaptım.
+Projeyi pembe tonlarda daha tatlı ve canlı bir arayüzle hazırladım.
+Kullanıcı önce kategori seçiyor.
+Sonra gelen kelimeyi harf harf ya da direkt kelime olarak tahmin etmeye çalışıyor.
 
 ## Özellikler
 
 - Meyve ve eşya kategorisi seçme
-- Rastgele kelime seçme
-- Harf veya direkt kelime tahmini yapma
+- Pembe temalı arayüz
+- Rastgele kelime getirme
+- Harf tahmini yapma
+- Direkt kelime tahmini yapma
 - Doğru ve yanlış harfleri ayrı gösterme
-- Kalan hak sistemi
-- Tur kazanılan oyun ve skor takibi
+- Kalan hakları gösterme
+- Skor ve tur bilgisi tutma
 - Tekrar oynama
 
 ## Kullanılan Teknolojiler
@@ -21,16 +26,14 @@ Bu proje React ile yapılmış tek sayfalık bir kelime tahmin oyunu.
 
 ## Projeyi Çalıştırma
 
-Projeyi çalıştırmak için önce terminali açıp proje klasörüne gelinir.
-
-Sonra şu komutlar yazılır.
+Projeyi çalıştırmak için terminalde proje klasörünü açıp şu komutları yazmak yeterli.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Proje çalıştıktan sonra tarayıcıda şu adres açılır.
+Sonra tarayıcıda şu adres açılır.
 
 ```txt
 http://localhost:5173
@@ -51,6 +54,10 @@ index.html
 package.json
 ```
 
-## Not
+## Dosyalar Kısaca
 
-Bu projede oyun mantığı ağırlıklı olarak `src/App.jsx` dosyasında kuruludur.
+- `App.jsx` dosyasında oyunun ana mantığı var.
+- `GuessInput.jsx` input ve tahmin butonu için kullanılıyor.
+- `WordDisplay.jsx` kelimenin ekranda görünmesini sağlıyor.
+- `GameStatus.jsx` skor hak ve mesaj alanını gösteriyor.
+- `styles.css` dosyasında tasarım var.
