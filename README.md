@@ -1,38 +1,42 @@
 # Kelime Tahmin Oyunu
 
-Bu proje React ile yapilmis tek sayfalik bir kelime tahmin oyunu.
+Bu proje React ile yapılmış tek sayfalık bir kelime tahmin oyunu.
 
-## Ozellikler
+## Özellikler
 
-- Meyve ve esya kategorisi secme
-- Rastgele kelime secme
+- Meyve ve eşya kategorisi seçme
+- Rastgele kelime seçme
 - Harf veya direkt kelime tahmini yapma
-- Dogru ve yanlis harfleri ayri gosterme
+- Doğru ve yanlış harfleri ayrı gösterme
 - Kalan hak sistemi
-- Tur kazanilan oyun ve skor takibi
+- Tur kazanılan oyun ve skor takibi
 - Tekrar oynama
 
-## Kullanilan Teknolojiler
+## Kullanılan Teknolojiler
 
 - React
 - JavaScript
 - CSS
 - Vite
 
-## Projeyi Calistirma
+## Projeyi Çalıştırma
+
+Projeyi çalıştırmak için önce terminali açıp proje klasörüne gelinir.
+
+Sonra şu komutlar yazılır.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Tarayicida acilacak adres:
+Proje çalıştıktan sonra tarayıcıda şu adres açılır.
 
 ```txt
 http://localhost:5173
 ```
 
-## Proje Yapisi
+## Proje Yapısı
 
 ```txt
 src/
@@ -49,4 +53,4 @@ package.json
 
 ## Not
 
-Bu projede oyun mantigi agirlikli olarak `src/App.jsx` dosyasinda kuruludur.
+Bu projede oyun mantığı ağırlıklı olarak `src/App.jsx` dosyasında kuruludur.
