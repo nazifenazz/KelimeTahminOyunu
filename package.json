@@ -1,0 +1,22 @@
+{
+  "_comment_file": "Bu dosya projenin ayar dosyasi. Hangi paketler kullaniliyor ve npm komutlari burada tutuluyor.",
+  "_comment": "Bu dosyada projenin ayarlari var. Hangi kutuphaneler var ve hangi komutlar calisiyor burada yaziyor.",
+  "name": "kelime-tahmin-oyunu",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "_comment": "Dev projeyi calistirir. Build projeyi yayina hazir hale getirir. Preview ise build sonucuna bakmak icin kullanilir.",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "_comment": "React arayuzu kurmak icin bu paketleri kullandim. Vite da projeyi hizli aciyor.",
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
+}

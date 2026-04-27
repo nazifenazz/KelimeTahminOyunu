@@ -1,0 +1,338 @@
+/* Bu dosya projenin tum tasarimini tutuyor.
+   Renkler bosluklar butonlar kutular basliklar
+   ve mobilde nasil gorunecegi burada ayarlaniyor. */
+/* Burada butun elemanlarin olcusunu daha duzenli hesaplamak icin border-box kullandim. */
+* {
+  box-sizing: border-box;
+}
+
+/* Sayfanin genel gorunusu burada ayarlaniyor. */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #40253d;
+  background:
+    radial-gradient(circle at top, #ffd7ef 0%, #ffd7ef 18%, #ffe9f5 40%, #fff4fa 72%, #fff9fc 100%);
+}
+
+/* Buton ve inputlar da sayfadaki ayni fontu kullansin istedim. */
+button,
+input {
+  font: inherit;
+}
+
+/* Bu alan tum oyunu sayfanin ortasina getiriyor. */
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+/* Oyunun ana kutusu burasi. Her sey bunun icinde duruyor. */
+.game-panel {
+  width: min(100%, 560px);
+  display: grid;
+  gap: 26px;
+  padding: 34px 32px;
+  border: 1px solid #f2c6dd;
+  border-radius: 18px;
+  background: rgb(255 255 255 / 84%);
+  box-shadow: 0 24px 60px rgb(232 102 171 / 20%);
+  backdrop-filter: blur(10px);
+}
+
+/* Baslik alani. */
+.game-header {
+  display: grid;
+  gap: 10px;
+  text-align: center;
+}
+
+/* Ana baslik stili. clamp kullaninca farkli ekranlarda guzel duruyor. */
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1.05;
+  color: #7e255d;
+}
+
+.subtitle {
+  margin: 0;
+  color: #a14a7f;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Oyun baslamadan once gorunen alan. */
+.start-screen {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.start-screen p {
+  margin: 0;
+  max-width: 34ch;
+  color: #8f4d77;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: grid;
+  gap: 14px;
+}
+
+.category-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.category-option {
+  min-height: 48px;
+  border: 1px solid #f0bfd8;
+  border-radius: 999px;
+  background: #fff4fa;
+  color: #8a3766;
+  font-weight: 800;
+}
+
+.category-option:hover:not(:disabled) {
+  background: #ffddef;
+}
+
+.category-option.active {
+  background: linear-gradient(135deg, #ff84c1, #ff5aa9);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgb(255 90 169 / 30%);
+}
+
+/* Burasi kategori bilgisini gosteriyor. */
+.category-badge {
+  justify-self: center;
+  margin: 0;
+  padding: 12px 18px;
+  border: 1px solid #f1cade;
+  border-radius: 999px;
+  background: #fff6fb;
+  color: #8a3766;
+  font-weight: 800;
+}
+
+/* Harflerin ve alt cizgilerin durdugu kisim. */
+.word-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* Her harf kutusunun tek tek gorunumu. */
+.letter-box {
+  min-width: 44px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-bottom: 4px solid #a33d77;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #7e255d;
+}
+
+/* Input ve butonun oldugu kisim. */
+.guess-form {
+  display: grid;
+  gap: 12px;
+}
+
+.guess-form label {
+  color: #6f3659;
+  font-weight: 800;
+}
+
+/* Masaustunde input ve butonu yan yana gosterdim. */
+.guess-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+/* Tahmin yazilan inputun stili. */
+input {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #f0bfd8;
+  border-radius: 14px;
+  padding: 0 14px;
+  background: #fff9fc;
+  color: #5a2749;
+  text-transform: lowercase;
+  box-shadow: inset 0 1px 2px rgb(255 120 190 / 8%);
+}
+
+/* Input secilince daha belli olsun diye focus rengi verdim. */
+input:focus {
+  outline: 3px solid #ffd0e8;
+  border-color: #ff67af;
+}
+
+/* Butonlarin genel stili. */
+button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 20px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff84c1, #ff5aa9);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgb(255 90 169 / 28%);
+}
+
+/* Mouse ustune gelince biraz koyulasiyor. */
+button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff6db7, #ef3f95);
+}
+
+/* Pasif buton soluk gorunsun diye boyle yaptim. */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Tekrar Oyna butonu farkli dursun diye baska renk verdim. */
+.secondary-button {
+  justify-self: center;
+  min-width: 180px;
+  background: linear-gradient(135deg, #ff8fc6, #ff69b2);
+}
+
+.secondary-button:hover {
+  background: linear-gradient(135deg, #ff7bbd, #f555a3);
+}
+
+/* Skorlarin ve mesajlarin oldugu kisim. */
+.status-area {
+  display: grid;
+  gap: 14px;
+  text-align: center;
+}
+
+.status-area p {
+  margin: 0;
+}
+
+.status-title {
+  color: #7f4063;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+/* Kalan haklari kutucuklarla gosteriyorum. */
+.life-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Bos hak kutusu daha soluk gorunuyor. */
+.life-box {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #f0bfd8;
+  border-radius: 8px;
+  background: #fff1f8;
+}
+
+/* Hak varsa kutu dolu gorunuyor. */
+.life-box.active {
+  border-color: #ff67af;
+  background: linear-gradient(135deg, #ff8ec6, #ff5aa9);
+}
+
+/* Tur, kazanilan oyun ve skor burada yan yana duruyor. */
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Kucuk bilgi kutularinin ortak stili. */
+.score-grid p,
+.letter-lists p,
+.message {
+  padding: 12px;
+  border: 1px solid #f2d1e2;
+  border-radius: 14px;
+  background: #fff8fc;
+  color: #75405f;
+  font-weight: 700;
+}
+
+/* Dogru ve yanlis harfleri yan yana gosterdim. */
+.letter-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Uyari mesajinin rengi ve kalinligi burada. */
+.message {
+  background: linear-gradient(135deg, #fff0f7, #ffe4f1);
+  color: #a04177;
+  font-weight: 800;
+}
+
+/* Sonuc yazi alaninin ortak stili. */
+.result {
+  min-height: 26px;
+  display: grid;
+  place-items: center;
+  color: #85506e;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+/* Kazanma yazisi yesil olsun istedim. */
+.win {
+  color: #e23b91;
+}
+
+/* Kaybetme yazisi kirmizi olsun istedim. */
+.lose {
+  color: #c04882;
+}
+
+/* Ekran kuculunce tasarim da ona gore duzenleniyor. */
+@media (max-width: 520px) {
+  .app {
+    padding: 16px;
+  }
+
+  .game-panel {
+    padding: 24px 18px;
+  }
+
+  .guess-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .score-grid,
+  .letter-lists {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-box {
+    width: 34px;
+    height: 48px;
+    font-size: 1.7rem;
+  }
+}
