@@ -26,14 +26,7 @@ Sonra gelen kelimeyi harf harf ya da direkt kelime olarak tahmin etmeye çalış
 
 ## Projeyi Çalıştırma
 
-Projeyi çalıştırmak için terminalde proje klasörünü açıp şu komutları yazmak yeterli.
-
-```bash
-npm install
-npm run dev
-```
-
-Sonra tarayıcıda şu adres açılır.
+Projeyi çalıştırdıktan sonra tarayıcıda şu adres açılmalıdır.
 
 ```txt
 http://localhost:5173
